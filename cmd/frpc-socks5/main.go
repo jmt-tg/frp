@@ -69,7 +69,7 @@ func main() {
 	proxyCfgs := []v1.ProxyConfigurer{
 		&v1.TCPProxyConfig{
 			ProxyBaseConfig: v1.ProxyBaseConfig{
-				Name: "local-socks5-" + *deviceId,
+				Name: "local-socks5-" + *deviceId + "-" + fmt.Sprintf("%d", frpsRemotePort),
 				Type: "tcp",
 				ProxyBackend: v1.ProxyBackend{
 					LocalIP:   "127.0.0.1",
